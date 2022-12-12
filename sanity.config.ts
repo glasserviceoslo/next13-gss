@@ -22,8 +22,8 @@ export default defineConfig({
   dataset,
   studio: {
     components: {
-      logo: Logo
-    }
+      logo: Logo,
+    },
   },
   schema: {
     // If you want more content types, you can add them to this array
