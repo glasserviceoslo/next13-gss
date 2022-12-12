@@ -1,6 +1,7 @@
 lockfileVersion: 5.4
 
 specifiers:
+  '@next/env': ^13.0.6
   '@portabletext/react': ^2.0.0
   '@sanity/icons': ^2.1.0
   '@sanity/image-url': ^1.0.1
@@ -54,6 +55,7 @@ dependencies:
   suspend-react: 0.0.8_react@18.2.0
 
 devDependencies:
+  '@next/env': 13.0.6
   '@types/react': 18.0.26
   autoprefixer: 10.4.13_postcss@8.4.20
   eslint: 8.29.0
@@ -792,7 +794,6 @@ packages:
 
   /@next/env/13.0.6:
     resolution: {integrity: sha512-yceT6DCHKqPRS1cAm8DHvDvK74DLIkDQdm5iV+GnIts8h0QbdHvkUIkdOvQoOODgpr6018skbmSQp12z5OWIQQ==}
-    dev: false
 
   /@next/eslint-plugin-next/13.0.6:
     resolution: {integrity: sha512-JUANdYNCddhmQBjQQPxEJYL7GMCqYtbfrdmtX7c013srig7waNCG69Aoql7CgAgjdy8jn1ovHVdcF/NB46XN3Q==}

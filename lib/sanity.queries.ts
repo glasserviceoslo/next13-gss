@@ -49,10 +49,14 @@ export interface Post {
   title?: string;
   mainImage?: any;
   date?: string;
-  excerpt?: string;
   author?: Author;
   slug?: string;
-  content?: any;
+  body?: any;
+  categories?: any;
+  seoTitle?: string;
+  description?: string;
+  keywords?: string[];
+  keyphrase?: string;
 }
 
 export interface Settings {

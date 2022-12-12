@@ -7,10 +7,10 @@ import Link from 'next/link';
 export default function HeroPost(
   props: Pick<
     Post,
-    'title' | 'mainImage' | 'date' | 'excerpt' | 'author' | 'slug'
+    'title' | 'mainImage' | 'date' | 'description' | 'author' | 'slug'
   >,
 ) {
-  const { title, mainImage, date, excerpt, author, slug } = props;
+  const { title, mainImage, date, description, author, slug } = props;
   return (
     <section>
       <div className="mb-8 md:mb-16">
@@ -28,7 +28,9 @@ export default function HeroPost(
           </div>
         </div>
         <div>
-          {excerpt && <p className="mb-4 text-lg leading-relaxed">{excerpt}</p>}
+          {description && (
+            <p className="mb-4 text-lg leading-relaxed">{description}</p>
+          )}
           {author && (
             <AuthorAvatar name={author.name} picture={author.picture} />
           )}
