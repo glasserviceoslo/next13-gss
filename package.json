@@ -5,7 +5,7 @@
     "dev": "next",
     "format": "npx prettier --write . --ignore-path .gitignore",
     "lint": "next lint -- --ignore-path .gitignore",
-    "lint:fix": "pnpm run format && pnpm run lint -- --fix",
+    "lint:fix": "npm run format && npm run lint -- --fix",
     "start": "next start",
     "type-check": "tsc --noEmit"
   },
@@ -30,8 +30,8 @@
     "suspend-react": "^0.0.8"
   },
   "devDependencies": {
-    "@next/env": "^13.0.6",
     "@types/react": "^18.0.25",
+    "@types/styled-components": "^5.1.26",
     "autoprefixer": "^10.4.13",
     "eslint": "^8.29.0",
     "eslint-config-next": "13.0.6",
