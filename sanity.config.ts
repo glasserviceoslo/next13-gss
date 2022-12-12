@@ -7,7 +7,6 @@ import Logo from 'components/studio/Logo'
 import { apiVersion, dataset, previewSecretId, projectId } from 'lib/sanity.api'
 import { previewDocumentNode } from 'plugins/previewPane'
 import { productionUrl } from 'plugins/productionUrl'
-import { settingsPlugin, settingsStructure } from 'plugins/settings'
 import { defineConfig } from 'sanity'
 import { deskTool } from 'sanity/desk'
 import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash'
@@ -28,16 +27,16 @@ export default defineConfig({
   },
   schema: {
     // If you want more content types, you can add them to this array
-    types: [authorType, categoryType, postType, settingsType],
+    types: [postType, categoryType, authorType],
   },
   plugins: [
     deskTool({
-      structure: settingsStructure(settingsType),
+      // structure: settingsStructure(settingsType),
       // `defaultDocumentNode` is responsible for adding a “Preview” tab to the document pane
       defaultDocumentNode: previewDocumentNode({ apiVersion, previewSecretId }),
     }),
     // Configures the global "new document" button, and document actions, to suit the Settings document singleton
-    settingsPlugin({ type: settingsType.name }),
+    // settingsPlugin({ type: settingsType.name }),
     // Add the "Open preview" action
     productionUrl({
       apiVersion,
