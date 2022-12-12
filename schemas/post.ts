@@ -1,26 +1,24 @@
-import { BookIcon } from '@sanity/icons'
+import { BookIcon, TagIcon } from '@sanity/icons'
 import { format, parseISO } from 'date-fns'
 import { defineField, defineType } from 'sanity'
 
 import authorType from './author'
-
-/**
- * This file is the schema definition for a post.
- *
- * Here you'll be able to edit the different fields that appear when you 
- * create or edit a post in the studio.
- * 
- * Here you can see the different schema types that are available:
-
-  https://www.sanity.io/docs/schema-types
-
- */
 
 export default defineType({
   name: 'post',
   title: 'Post',
   icon: BookIcon,
   type: 'document',
+  groups: [
+    {
+      name: 'htmlContent',
+      title: 'HTML Content',
+    },
+    {
+      name: 'seo',
+      title: 'SEO',
+    },
+  ],
   fields: [
     defineField({
       name: 'title',
@@ -43,20 +41,61 @@ export default defineType({
       name: 'content',
       title: 'Content',
       type: 'array',
-      of: [{ type: 'block' }],
+      of: [
+        {
+          type: 'block',
+          marks: {
+            // Annotations can be any object structure – e.g. a link or a footnote.
+            annotations: [
+              {
+                name: 'link',
+                type: 'object',
+                title: 'External link',
+                fields: [
+                  {
+                    name: 'href',
+                    type: 'url',
+                    title: 'URL',
+                  },
+                  {
+                    title: 'Open in new tab',
+                    name: 'blank',
+                    type: 'boolean',
+                  },
+                ],
+              },
+              {
+                name: 'internalLink',
+                type: 'object',
+                icon: TagIcon,
+                title: 'Internal link',
+                fields: [
+                  {
+                    name: 'reference',
+                    type: 'reference',
+                    title: 'Reference',
+                    to: [{ type: 'post' }],
+                  },
+                ],
+              },
+            ],
+          },
+        },
+      ],
     }),
     defineField({
-      name: 'excerpt',
-      title: 'Excerpt',
-      type: 'text',
-    }),
-    defineField({
-      name: 'coverImage',
-      title: 'Cover Image',
+      name: 'mainImage',
+      title: 'Main Image',
       type: 'image',
       options: {
         hotspot: true,
       },
+    }),
+    defineField({
+      name: 'categories',
+      title: 'Categories',
+      type: 'array',
+      of: [{ type: 'reference', to: { type: 'category' } }],
     }),
     defineField({
       name: 'date',
@@ -70,17 +109,64 @@ export default defineType({
       type: 'reference',
       to: [{ type: authorType.name }],
     }),
+    // HTML Group
+    // defineField({
+    //   name: 'htmlToArticleBody',
+    //   title: 'HTML to Article Body',
+    //   type: 'htmlToPortableText',
+    //   group: 'htmlContent',
+    // }),
+    // defineField({
+    //   name: 'articleBody',
+    //   title: 'Article Body',
+    //   type: 'array',
+    //   of: [{ type: 'block' }],
+    //   group: 'htmlContent',
+    // }),
+    // End HTML Group
+    defineField({
+      name: 'seoTitle',
+      title: 'SEO title',
+      type: 'string',
+      group: 'seo',
+    }),
+    defineField({
+      name: 'description',
+      title: 'Meta Description',
+      type: 'string',
+      group: 'seo',
+    }),
+    defineField({
+      name: 'seoKeyphrase',
+      title: 'Focus Keyphrase',
+      type: 'string',
+      group: 'seo',
+    }),
+    defineField({
+      name: 'seoKeywords',
+      title: 'Keywords',
+      type: 'array',
+      group: 'seo',
+      of: [
+        {
+          type: 'string',
+        },
+      ],
+      options: {
+        layout: 'tags',
+      },
+    }),
   ],
   preview: {
     select: {
       title: 'title',
-      author: 'author.name',
+      slug: 'slug',
       date: 'date',
-      media: 'coverImage',
+      media: 'mainImage',
     },
-    prepare({ title, media, author, date }) {
+    prepare({ title, media, slug, date }) {
       const subtitles = [
-        author && `by ${author}`,
+        slug && `/${slug.current}`,
         date && `on ${format(parseISO(date), 'LLL d, yyyy')}`,
       ].filter(Boolean)
 
