@@ -41,7 +41,7 @@ export default function PostPage(props: {
                 date={post.date}
                 author={post.author}
               />
-              <PostBody content={post.content} />
+              <PostBody content={post.body} />
             </article>
             <SectionSeparator />
             {morePosts?.length > 0 && <MoreStories posts={morePosts} />}

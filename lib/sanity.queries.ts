@@ -4,7 +4,7 @@ const postFields = groq`
   _id,
   title,
   date,
-  excerpt,
+  description,
   mainImage,
   "slug": slug.current,
   "author": author->{name, picture},
@@ -20,11 +20,21 @@ export const indexQuery = groq`
 export const postAndMoreStoriesQuery = groq`
 {
   "post": *[_type == "post" && slug.current == $slug] | order(_updatedAt desc) [0] {
-    content,
+    category->,
+    body[] {
+      ...,
+      markDefs[] {
+        ...,
+        _type == "internalLink" => {
+          ...,
+          "slug": @.reference-> slug
+        }
+      }
+    },
     ${postFields}
   },
   "morePosts": *[_type == "post" && slug.current != $slug] | order(date desc, _updatedAt desc) [0...2] {
-    content,
+    body,
     ${postFields}
   }
 }`;
