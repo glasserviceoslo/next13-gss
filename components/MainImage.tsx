@@ -1,17 +1,17 @@
-import cn from 'classnames'
-import { urlForImage } from 'lib/sanity.image'
-import Image from 'next/image'
-import Link from 'next/link'
+import cn from 'classnames';
+import { urlForImage } from 'lib/sanity.image';
+import Image from 'next/image';
+import Link from 'next/link';
 
 interface CoverImageProps {
-  title: string
-  slug?: string
-  image: any
-  priority?: boolean
+  title: string;
+  slug?: string;
+  image: any;
+  priority?: boolean;
 }
 
-export default function CoverImage(props: CoverImageProps) {
-  const { title, slug, image: source, priority } = props
+export default function MainImage(props: CoverImageProps) {
+  const { title, slug, image: source, priority } = props;
   const image = source?.asset?._ref ? (
     <div
       className={cn('shadow-small', {
@@ -30,7 +30,7 @@ export default function CoverImage(props: CoverImageProps) {
     </div>
   ) : (
     <div style={{ paddingTop: '50%', backgroundColor: '#ddd' }} />
-  )
+  );
 
   return (
     <div className="sm:mx-0">
@@ -42,5 +42,5 @@ export default function CoverImage(props: CoverImageProps) {
         image
       )}
     </div>
-  )
+  );
 }

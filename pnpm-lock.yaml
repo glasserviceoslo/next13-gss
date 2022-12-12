@@ -2,6 +2,7 @@ lockfileVersion: 5.4
 
 specifiers:
   '@portabletext/react': ^2.0.0
+  '@sanity/icons': ^2.1.0
   '@sanity/image-url': ^1.0.1
   '@sanity/vision': 3.0.6
   '@types/react': ^18.0.25
@@ -33,6 +34,7 @@ specifiers:
 
 dependencies:
   '@portabletext/react': 2.0.0_react@18.2.0
+  '@sanity/icons': 2.1.0_react@18.2.0
   '@sanity/image-url': 1.0.1
   '@sanity/vision': 3.0.6_tvjnc2ddxzbkurfarkyztohcju
   '@vercel/og': 0.0.21

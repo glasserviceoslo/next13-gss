@@ -1,5 +1,5 @@
-import PostPreview from 'components/PostPreview'
-import type { Post } from 'lib/sanity.queries'
+import PostPreview from 'components/PostPreview';
+import type { Post } from 'lib/sanity.queries';
 
 export default function MoreStories({ posts }: { posts: Post[] }) {
   return (
@@ -12,7 +12,7 @@ export default function MoreStories({ posts }: { posts: Post[] }) {
           <PostPreview
             key={post._id}
             title={post.title}
-            coverImage={post.coverImage}
+            mainImage={post.mainImage}
             date={post.date}
             author={post.author}
             slug={post.slug}
@@ -21,5 +21,5 @@ export default function MoreStories({ posts }: { posts: Post[] }) {
         ))}
       </div>
     </section>
-  )
+  );
 }

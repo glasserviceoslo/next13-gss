@@ -1,8 +1,8 @@
-import { BookIcon, TagIcon } from '@sanity/icons'
-import { format, parseISO } from 'date-fns'
-import { defineField, defineType } from 'sanity'
+import { BookIcon, TagIcon } from '@sanity/icons';
+import { format, parseISO } from 'date-fns';
+import { defineField, defineType } from 'sanity';
 
-import authorType from './author'
+import authorType from './author';
 
 export default defineType({
   name: 'post',
@@ -38,8 +38,22 @@ export default defineType({
       validation: (rule) => rule.required(),
     }),
     defineField({
-      name: 'content',
-      title: 'Content',
+      name: 'author',
+      title: 'Author',
+      type: 'reference',
+      to: [{ type: authorType.name }],
+    }),
+    defineField({
+      name: 'mainImage',
+      title: 'Main Image',
+      type: 'image',
+      options: {
+        hotspot: true,
+      },
+    }),
+    defineField({
+      name: 'body',
+      title: 'Body',
       type: 'array',
       of: [
         {
@@ -81,15 +95,11 @@ export default defineType({
             ],
           },
         },
+        {
+          type: 'image',
+          options: { hotspot: true },
+        },
       ],
-    }),
-    defineField({
-      name: 'mainImage',
-      title: 'Main Image',
-      type: 'image',
-      options: {
-        hotspot: true,
-      },
     }),
     defineField({
       name: 'categories',
@@ -103,12 +113,7 @@ export default defineType({
       type: 'datetime',
       initialValue: () => new Date().toISOString(),
     }),
-    defineField({
-      name: 'author',
-      title: 'Author',
-      type: 'reference',
-      to: [{ type: authorType.name }],
-    }),
+
     // HTML Group
     // defineField({
     //   name: 'htmlToArticleBody',
@@ -168,9 +173,9 @@ export default defineType({
       const subtitles = [
         slug && `/${slug.current}`,
         date && `on ${format(parseISO(date), 'LLL d, yyyy')}`,
-      ].filter(Boolean)
+      ].filter(Boolean);
 
-      return { title, media, subtitle: subtitles.join(' ') }
+      return { title, media, subtitle: subtitles.join(' ') };
     },
   },
-})
+});

@@ -1,21 +1,21 @@
-import Container from 'components/BlogContainer'
-import BlogHeader from 'components/BlogHeader'
-import Layout from 'components/BlogLayout'
-import HeroPost from 'components/HeroPost'
-import MoreStories from 'components/MoreStories'
-import IntroTemplate from 'intro-template'
-import * as demo from 'lib/demo.data'
-import type { Post, Settings } from 'lib/sanity.queries'
+import Container from 'components/BlogContainer';
+import BlogHeader from 'components/BlogHeader';
+import Layout from 'components/BlogLayout';
+import HeroPost from 'components/HeroPost';
+import MoreStories from 'components/MoreStories';
+import IntroTemplate from 'intro-template';
+import * as demo from 'lib/demo.data';
+import type { Post, Settings } from 'lib/sanity.queries';
 
 export default function IndexPage(props: {
-  preview?: boolean
-  loading?: boolean
-  posts: Post[]
-  settings: Settings
+  preview?: boolean;
+  loading?: boolean;
+  posts: Post[];
+  settings: Settings;
 }) {
-  const { preview, loading, posts, settings } = props
-  const [heroPost, ...morePosts] = posts || []
-  const { title = demo.title, description = demo.description } = settings || {}
+  const { preview, loading, posts, settings } = props;
+  const [heroPost, ...morePosts] = posts || [];
+  const { title = demo.title, description = demo.description } = settings || {};
 
   return (
     <>
@@ -25,7 +25,7 @@ export default function IndexPage(props: {
           {heroPost && (
             <HeroPost
               title={heroPost.title}
-              coverImage={heroPost.coverImage}
+              mainImage={heroPost.mainImage}
               date={heroPost.date}
               author={heroPost.author}
               slug={heroPost.slug}
@@ -37,5 +37,5 @@ export default function IndexPage(props: {
         <IntroTemplate />
       </Layout>
     </>
-  )
+  );
 }
