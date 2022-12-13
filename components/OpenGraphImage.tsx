@@ -1,10 +1,10 @@
 // Renders the Open Graph image used on the home page
 
-export const width = 1200
-export const height = 630
+export const width = 1200;
+export const height = 630;
 
 export function OpenGraphImage(props: { title: string }) {
-  const { title } = props
+  const { title } = props;
   return (
     <div
       style={{
@@ -232,5 +232,5 @@ export function OpenGraphImage(props: { title: string }) {
         }}
       />
     </div>
-  )
+  );
 }

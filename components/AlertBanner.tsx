@@ -1,14 +1,14 @@
 /* eslint-disable @next/next/no-html-link-for-pages */
-import Container from 'components/BlogContainer'
+import Container from 'components/BlogContainer';
 
 export default function Alert({
   preview,
   loading,
 }: {
-  preview?: boolean
-  loading?: boolean
+  preview?: boolean;
+  loading?: boolean;
 }) {
-  if (!preview) return
+  if (!preview) return;
 
   return (
     <div className="border-b border-accent-7 bg-accent-7 text-white">
@@ -25,5 +25,5 @@ export default function Alert({
         </div>
       </Container>
     </div>
-  )
+  );
 }

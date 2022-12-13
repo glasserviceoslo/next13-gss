@@ -6,7 +6,6 @@ const config = {
   experimental: {
     appDir: true,
   },
-
   images: {
     remotePatterns: [
       { hostname: 'cdn.sanity.io' },
@@ -21,6 +20,10 @@ const config = {
     /// Set this to false if you want production builds to abort if there's lint errors
     ignoreDuringBuilds: process.env.VERCEL_ENV === 'production',
   },
+  // webpack: (config) => {
+  //   config.experiments = { layers: true, asyncWebAssembly: true, syncWebAssembly: true }
+  //   return config
+  // },
 }
 
 export default config

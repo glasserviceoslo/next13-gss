@@ -1,13 +1,13 @@
-import AlertBanner from 'components/AlertBanner'
+import AlertBanner from 'components/AlertBanner';
 
 export default function BlogLayout({
   preview,
   loading,
   children,
 }: {
-  preview: boolean
-  loading?: boolean
-  children: React.ReactNode
+  preview: boolean;
+  loading?: boolean;
+  children: React.ReactNode;
 }) {
   return (
     <>
@@ -16,5 +16,5 @@ export default function BlogLayout({
         <main>{children}</main>
       </div>
     </>
-  )
+  );
 }

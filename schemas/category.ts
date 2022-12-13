@@ -1,5 +1,5 @@
-import { TagIcon } from '@sanity/icons'
-import { defineField, defineType } from 'sanity'
+import { TagIcon } from '@sanity/icons';
+import { defineField, defineType } from 'sanity';
 
 export default defineType({
   name: 'category',
@@ -18,4 +18,4 @@ export default defineType({
       type: 'text',
     }),
   ],
-})
+});

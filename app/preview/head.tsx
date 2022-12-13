@@ -1,1 +1,1 @@
-export { default } from 'app/head'
+export { default } from 'app/head';

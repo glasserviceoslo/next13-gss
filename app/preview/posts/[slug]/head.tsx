@@ -1,1 +1,1 @@
-export { default } from 'app/posts/[slug]/head'
+export { default } from 'app/posts/[slug]/head';

@@ -4,19 +4,19 @@
 // It's part of the Studio's “Structure Builder API” and is documented here:
 // https://www.sanity.io/docs/structure-builder-reference
 
-import { DefaultDocumentNodeResolver } from 'sanity/desk'
-import authorType from 'schemas/author'
-import postType from 'schemas/post'
+import { DefaultDocumentNodeResolver } from 'sanity/desk';
+import authorType from 'schemas/author';
+import postType from 'schemas/post';
 
-import AuthorAvatarPreviewPane from './AuthorAvatarPreviewPane'
-import PostPreviewPane from './PostPreviewPane'
+import AuthorAvatarPreviewPane from './AuthorAvatarPreviewPane';
+import PostPreviewPane from './PostPreviewPane';
 
 export const previewDocumentNode = ({
   apiVersion,
   previewSecretId,
 }: {
-  apiVersion: string
-  previewSecretId: `${string}.${string}`
+  apiVersion: string;
+  previewSecretId: `${string}.${string}`;
 }): DefaultDocumentNodeResolver => {
   return (S, { schemaType }) => {
     switch (schemaType) {
@@ -31,7 +31,7 @@ export const previewDocumentNode = ({
               />
             ))
             .title('Preview'),
-        ])
+        ]);
 
       case postType.name:
         return S.document().views([
@@ -45,10 +45,10 @@ export const previewDocumentNode = ({
               />
             ))
             .title('Preview'),
-        ])
+        ]);
 
       default:
-        return null
+        return null;
     }
-  }
-}
+  };
+};
