@@ -4,7 +4,7 @@ import { useRive } from '@rive-app/react-canvas';
 
 const Rive = () => {
   const { RiveComponent, rive } = useRive({
-    src: '/GSS.riv',
+    src: '/mobile.riv',
     autoplay: true,
   });
 
