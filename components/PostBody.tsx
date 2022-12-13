@@ -7,7 +7,7 @@
  * https://portabletext.org/
  *
  */
-import { PortableText, type PortableTextComponents } from '@portabletext/react';
+import { type PortableTextComponents, PortableText } from '@portabletext/react';
 import { urlForImage } from 'lib/sanity.image';
 import Image from 'next/image';
 import Link from 'next/link';
