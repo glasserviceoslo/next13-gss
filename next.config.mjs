@@ -5,7 +5,6 @@ const config = {
   swcMinify: false,
   experimental: {
     appDir: true,
-    urlImports: ['https://unpkg.com'],
   },
   images: {
     remotePatterns: [
@@ -27,7 +26,7 @@ const config = {
     config.output.assetModuleFilename = 'static/[hash][ext]';
     config.output.publicPath = '/_next/';
     config.module.rules.push({
-      test: /\.wasm/,
+      test: /rive\.wasm/,
       type: 'asset/resource',
     });
     return config;
