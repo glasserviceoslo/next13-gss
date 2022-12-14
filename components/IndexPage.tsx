@@ -23,9 +23,9 @@ export default function IndexPage(props: {
     <>
       <Layout preview={preview} loading={loading}>
         <Container>
-          {/* <Suspense fallback="loading...">
+          <Suspense fallback="loading...">
             <Rive />
-          </Suspense> */}
+          </Suspense>
           <BlogHeader title={title} description={description} level={1} />
           {heroPost && (
             <HeroPost
