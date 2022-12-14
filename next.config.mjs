@@ -20,17 +20,17 @@ const config = {
     /// Set this to false if you want production builds to abort if there's lint errors
     ignoreDuringBuilds: process.env.VERCEL_ENV === 'production',
   },
-  // webpack: (config) => {
-  //   const experiments = config.experiments || {};
-  //   config.experiments = { ...experiments, asyncWebAssembly: true };
-  //   config.output.assetModuleFilename = 'static/[hash][ext]';
-  //   config.output.publicPath = '/_next/';
-  //   config.module.rules.push({
-  //     test: /rive\.wasm/,
-  //     type: 'asset/resource',
-  //   });
-  //   return config;
-  // },
+  webpack: (config) => {
+    const experiments = config.experiments || {};
+    config.experiments = { ...experiments, asyncWebAssembly: true };
+    config.output.assetModuleFilename = 'static/[hash][ext]';
+    config.output.publicPath = '/_next/';
+    config.module.rules.push({
+      test: /rive\.wasm/,
+      type: 'asset/resource',
+    });
+    return config;
+  },
 };
 
 export default config;
