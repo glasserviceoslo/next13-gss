@@ -1,4 +1,4 @@
-import { useLocalStorage, useMediaQuery } from 'hooks';
+import { useMediaQuery } from 'hooks';
 import { getLocalState, saveToLocalState } from 'lib/localStorage';
 import { useEffect, useState } from 'react';
 

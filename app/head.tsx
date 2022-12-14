@@ -1,3 +1,4 @@
+import riveWASMResource from '@rive-app/canvas/rive.wasm';
 import BlogMeta from 'components/BlogMeta';
 import MetaDescription from 'components/MetaDescription';
 import * as demo from 'lib/demo.data';
@@ -14,6 +15,18 @@ export default async function PageHead() {
   return (
     <>
       <title>{title}</title>
+      <link
+        rel="preload"
+        href={riveWASMResource}
+        as="fetch"
+        crossOrigin="anonymous"
+      />
+      <link
+        rel="preload"
+        href="/mobile.riv"
+        as="fetch"
+        crossOrigin="anonymous"
+      />
       <BlogMeta />
       <MetaDescription value={description} />
       <meta
