@@ -32,6 +32,12 @@ export default function BlogMeta() {
         as="fetch"
         crossOrigin="anonymous"
       />
+      <link
+        rel="preload"
+        href="/mobile.riv"
+        as="fetch"
+        crossOrigin="anonymous"
+      />
       <meta name="msapplication-TileColor" content="#000000" />
       <meta name="msapplication-config" content="/favicon/browserconfig.xml" />
       <meta name="theme-color" content="#000" />

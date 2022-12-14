@@ -1,7 +1,7 @@
 'use client';
 
 import { getLocalState, saveToLocalState } from 'lib/localStorage';
-import React from 'react';
+import React, { useEffect } from 'react';
 
 interface ThemeProps {
   isDarkTheme: boolean;
@@ -34,13 +34,15 @@ const ThemeProvider = ({ children }: ThemeProviderProps) => {
     [isDarkTheme, toggleDarkTheme],
   );
 
-  const themeClass = isDarkTheme ? 'dark' : 'light';
+  useEffect(() => {
+    isDarkTheme
+      ? document.documentElement.classList.add('dark')
+      : document.documentElement.classList.remove('dark');
+  }, [isDarkTheme]);
 
   return (
     <ThemeContext.Provider value={contextValue}>
-      <html lang="nb" className={themeClass}>
-        {children}
-      </html>
+      {children}
     </ThemeContext.Provider>
   );
 };
