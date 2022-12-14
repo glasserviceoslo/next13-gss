@@ -2,17 +2,12 @@
 
 import { useVisibility } from 'hooks';
 
+import { ButtonPrimary } from './shared';
+
 const BookingButton = () => {
   const { toggle } = useVisibility();
-  return (
-    <button
-      type="button"
-      className="btn-primary hidden md:block"
-      onClick={toggle}
-    >
-      Gratis Befaring
-    </button>
-  );
+
+  return <ButtonPrimary handleClick={toggle}>Gratis Befaring</ButtonPrimary>;
 };
 
 export default BookingButton;

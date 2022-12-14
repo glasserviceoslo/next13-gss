@@ -12,8 +12,6 @@ import { urlForImage } from 'lib/sanity.image';
 import Image from 'next/image';
 import Link from 'next/link';
 
-import styles from './PostBody.module.css';
-
 const customComponents: PortableTextComponents = {
   types: {
     image: ({ value }: any) => (
@@ -40,7 +38,7 @@ const customComponents: PortableTextComponents = {
 
 export default function PostBody({ content }) {
   return (
-    <div className={`mx-auto max-w-2xl ${styles.portableText}`}>
+    <div className="mx-auto max-w-2xl text-lg leading-relaxed [&_p]:my-6 [&_ul]:my-6 [&_ol]:my-6 [&_blockquote]:my-6 [&_h2]:mt-12 [&_h2]:mb-4 [&_h2]:text-3xl [&_h2]:leading-snug [&_h3]:mt-8 [&_h3]:mb-4 [&_h3]:text-2xl [&_h3]:leading-snug [&_a]:text-blue-500 [&_a]:underline [&_a:hover]:text-blue-800">
       <PortableText value={content} components={customComponents} />
     </div>
   );

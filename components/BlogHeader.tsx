@@ -1,8 +1,6 @@
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 
-import styles from './BlogHeader.module.css';
-
 export default function BlogHeader({
   title,
   description,
@@ -19,9 +17,7 @@ export default function BlogHeader({
           <h1 className="text-6xl font-bold leading-tight tracking-tighter md:pr-8 md:text-8xl">
             {title}
           </h1>
-          <h4
-            className={`mt-5 text-center text-lg md:pl-8 md:text-left ${styles.portableText}`}
-          >
+          <h4 className="mt-5 text-center text-lg md:pl-8 md:text-left [&_a]:underline [&_a]:transition-colors [&_a]:duration-200 [&_a:hover]:text-success">
             <PortableText value={description} />
           </h4>
         </header>
