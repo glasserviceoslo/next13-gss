@@ -10,6 +10,8 @@
     "type-check": "tsc --noEmit"
   },
   "dependencies": {
+    "@builder.io/partytown": "^0.7.3",
+    "@calcom/embed-react": "^1.0.9",
     "@portabletext/react": "^2.0.0",
     "@rive-app/canvas": "^1.0.96",
     "@rive-app/react-canvas": "^3.0.33",

@@ -1,6 +1,7 @@
 /**
  * All the shared stuff that goes into <head> on `(blog)` routes, can be be imported by `head.tsx` files in the /app dir or wrapped in a <Head> component in the /pages dir.
  */
+import { Partytown } from '@builder.io/partytown/react';
 import riveWASMResource from '@rive-app/canvas/rive.wasm';
 
 export default function BlogMeta() {

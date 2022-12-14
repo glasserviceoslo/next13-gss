@@ -1,11 +1,21 @@
 'use client';
 
 import { useDarkMode } from 'hooks';
+import { useEffect, useState } from 'react';
 
 import { MoonIcon, SunIcon } from './svgs';
 
 const ToggleThemeButton = () => {
   const { isDarkMode, toggle } = useDarkMode();
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
+  if (!isMounted) {
+    return null;
+  }
 
   return (
     <button

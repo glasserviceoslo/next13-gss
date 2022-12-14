@@ -1,7 +1,6 @@
-'use client';
-
 import 'styles/global.css';
 
+import Calendar from 'components/Calendar';
 import Navbar from 'components/Navbar';
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
@@ -12,6 +11,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <header>
           <Navbar />
         </header>
+        <Calendar />
         {children}
       </body>
     </html>
