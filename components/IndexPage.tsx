@@ -5,6 +5,9 @@ import HeroPost from 'components/HeroPost';
 import MoreStories from 'components/MoreStories';
 import * as demo from 'lib/demo.data';
 import type { Post, Settings } from 'lib/sanity.queries';
+import { Suspense } from 'react';
+
+import Rive from './Rive';
 
 export default function IndexPage(props: {
   preview?: boolean;
@@ -20,6 +23,9 @@ export default function IndexPage(props: {
     <>
       <Layout preview={preview} loading={loading}>
         <Container>
+          <Suspense fallback="loading...">
+            <Rive />
+          </Suspense>
           <BlogHeader title={title} description={description} level={1} />
           {heroPost && (
             <HeroPost

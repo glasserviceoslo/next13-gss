@@ -7,7 +7,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
     <html lang="nb">
       <head />
-      <body className="bg-white text-black">
+      <body className="bg-white pt-16 text-black">
         <header>
           <Navbar />
         </header>
