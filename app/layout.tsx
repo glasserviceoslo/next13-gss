@@ -1,14 +1,11 @@
-import 'tailwindcss/tailwind.css';
+import 'styles/global.css';
 
 import Navbar from 'components/Navbar';
+import ThemeProvider from 'providers/ThemeProvider';
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode;
-}) {
+const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
-    <html lang="en">
+    <ThemeProvider>
       <head />
       <body className="bg-white text-black">
         <header>
@@ -16,6 +13,8 @@ export default function RootLayout({
         </header>
         {children}
       </body>
-    </html>
+    </ThemeProvider>
   );
-}
+};
+
+export default RootLayout;
