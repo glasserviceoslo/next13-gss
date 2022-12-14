@@ -19,11 +19,14 @@ const customComponents: PortableTextComponents = {
     image: ({ value }: any) => (
       <Image
         className="h-auto w-full"
-        width={500}
-        height={250}
+        width={750}
+        height={500}
         alt={`Cover Image for ${value.title}`}
-        src={urlForImage(value.asset).url()}
-        sizes="100vw"
+        src={urlForImage(value.asset)
+          .format('webp')
+          .width(750)
+          .height(500)
+          .url()}
         priority={value.priority}
       />
     ),
