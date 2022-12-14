@@ -1,8 +1,6 @@
 import 'styles/global.css';
 
-import Calendar from 'components/Calendar';
 import Navbar from 'components/Navbar';
-import { Suspense } from 'react';
 
 const RootLayout = ({ children }: { children: React.ReactNode }) => {
   return (
@@ -12,9 +10,7 @@ const RootLayout = ({ children }: { children: React.ReactNode }) => {
         <header>
           <Navbar />
         </header>
-        <Suspense>
-          <Calendar />
-        </Suspense>
+
         {children}
       </body>
     </html>

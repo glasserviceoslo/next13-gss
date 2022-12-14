@@ -29,7 +29,7 @@ export default function MainImage(props: CoverImageProps) {
       />
     </div>
   ) : (
-    <div style={{ paddingTop: '50%', backgroundColor: '#ddd' }} />
+    <div className="bg-slate-200 pt-[50%]" />
   );
 
   return (
