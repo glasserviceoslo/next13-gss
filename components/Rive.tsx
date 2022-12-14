@@ -1,9 +1,9 @@
 'use client';
 
-import riveWASMResource from '@rive-app/canvas/rive.wasm';
+// import riveWASMResource from '@rive-app/canvas/rive.wasm';
 import { RuntimeLoader, useRive } from '@rive-app/react-canvas';
 
-RuntimeLoader.setWasmUrl(riveWASMResource);
+// RuntimeLoader.setWasmUrl(riveWASMResource);
 
 const Rive = () => {
   const { RiveComponent, rive } = useRive({
