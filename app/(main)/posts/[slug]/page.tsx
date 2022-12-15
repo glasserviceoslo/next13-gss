@@ -1,6 +1,6 @@
 import PostPage from 'components/PostPage';
-import PreviewPostPage from 'components/PreviewPostPage';
-import { PreviewSuspense } from 'components/PreviewSuspense';
+import PreviewPostPage from 'components/preview/PreviewPostPage';
+import { PreviewSuspense } from 'components/preview/PreviewSuspense';
 import {
   getAllPostsSlugs,
   getPostAndMoreStories,

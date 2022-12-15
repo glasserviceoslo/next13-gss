@@ -1,9 +1,7 @@
 import Container from 'components/BlogContainer';
-import BlogHeader from 'components/BlogHeader';
 import Layout from 'components/BlogLayout';
 import HeroPost from 'components/HeroPost';
 import MoreStories from 'components/MoreStories';
-import * as demo from 'lib/demo.data';
 import type { Post, Settings } from 'lib/sanity.queries';
 import { Suspense } from 'react';
 
@@ -17,7 +15,6 @@ export default function IndexPage(props: {
 }) {
   const { preview, loading, posts, settings } = props;
   const [heroPost, ...morePosts] = posts || [];
-  const { title = demo.title, description = demo.description } = settings || {};
 
   return (
     <>
@@ -26,7 +23,6 @@ export default function IndexPage(props: {
           <Suspense fallback="loading...">
             <Rive />
           </Suspense>
-          <BlogHeader title={title} description={description} level={1} />
           {heroPost && (
             <HeroPost
               title={heroPost.title}

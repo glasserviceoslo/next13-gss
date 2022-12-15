@@ -1,4 +1,0 @@
-{
-  "https://unpkg.com/@rive-app/canvas@1.0.96/rive.wasm": { "integrity": "sha512-l5RTzVYEsreD8WNIhjOsoMscrSKk8Bbl2HoLYU7Fw7iEv1eujYyGxeNBsGOzneIaWmMaiBoj3YDwrxNVJ5eaNA==", "contentType": "application/wasm" },
-  "version": 1
-}
