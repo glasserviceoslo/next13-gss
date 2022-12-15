@@ -25,7 +25,7 @@ export default function MainImage(props: CoverImageProps) {
         alt={`Cover Image for ${title}`}
         src={urlForImage(source).format('webp').height(1000).width(2000).url()}
         sizes="100vw"
-        priority
+        priority={priority}
       />
     </div>
   ) : (

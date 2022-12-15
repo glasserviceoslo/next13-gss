@@ -7,7 +7,11 @@ import { ButtonPrimary } from './shared';
 const BookingButton = () => {
   const { toggle } = useVisibility();
 
-  return <ButtonPrimary handleClick={toggle}>Gratis Befaring</ButtonPrimary>;
+  return (
+    <ButtonPrimary ariaLabel="book-appointment-button" handleClick={toggle}>
+      Gratis Befaring
+    </ButtonPrimary>
+  );
 };
 
 export default BookingButton;
