@@ -3,23 +3,23 @@
  */
 
 import { visionTool } from '@sanity/vision';
-import Logo from 'components/studio/Logo';
+import { defineConfig } from 'sanity';
+import { deskTool } from 'sanity/desk';
+import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash';
+import { media } from 'sanity-plugin-media';
+import Logo from 'src/components/studio/Logo';
 import {
   apiVersion,
   dataset,
   previewSecretId,
   projectId,
-} from 'lib/sanity.api';
-import { previewDocumentNode } from 'plugins/previewPane';
-import { productionUrl } from 'plugins/productionUrl';
-import { defineConfig } from 'sanity';
-import { deskTool } from 'sanity/desk';
-import { unsplashImageAsset } from 'sanity-plugin-asset-source-unsplash';
-import { media } from 'sanity-plugin-media';
-import authorType from 'schemas/author';
-import categoryType from 'schemas/category';
-import postType from 'schemas/post';
-import settingsType from 'schemas/settings';
+} from 'src/lib/sanity.api';
+import { previewDocumentNode } from 'src/plugins/previewPane';
+import { productionUrl } from 'src/plugins/productionUrl';
+import authorType from 'src/schemas/author';
+import categoryType from 'src/schemas/category';
+import postType from 'src/schemas/post';
+import settingsType from 'src/schemas/settings';
 
 export default defineConfig({
   basePath: '/studio',
