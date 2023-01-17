@@ -1,8 +1,8 @@
+import Link from 'next/link';
 import AuthorAvatar from 'src/components/AuthorAvatar';
 import MainImage from 'src/components/MainImage';
 import Date from 'src/components/PostDate';
 import type { Post } from 'src/lib/sanity.queries';
-import Link from 'next/link';
 
 export default function HeroPost(
   props: Pick<

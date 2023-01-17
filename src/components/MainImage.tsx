@@ -1,7 +1,7 @@
 import cn from 'classnames';
-import { urlForImage } from 'src/lib/sanity.image';
 import Image from 'next/image';
 import Link from 'next/link';
+import { urlForImage } from 'src/lib/sanity.image';
 
 interface CoverImageProps {
   title: string;

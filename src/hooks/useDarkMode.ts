@@ -1,6 +1,6 @@
+import { useEffect, useState } from 'react';
 import { useMediaQuery } from 'src/hooks';
 import { getLocalState, saveToLocalState } from 'src/lib/localStorage';
-import { useEffect, useState } from 'react';
 
 const COLOR_SCHEME_QUERY = '(prefers-color-scheme: dark)';
 

@@ -1,9 +1,9 @@
+import { Suspense } from 'react';
 import Container from 'src/components/BlogContainer';
 import Layout from 'src/components/BlogLayout';
 import HeroPost from 'src/components/HeroPost';
 import MoreStories from 'src/components/MoreStories';
 import type { Post, Settings } from 'src/lib/sanity.queries';
-import { Suspense } from 'react';
 
 import Rive from './Rive';
 

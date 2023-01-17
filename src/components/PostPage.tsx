@@ -1,3 +1,4 @@
+import { notFound } from 'next/navigation';
 import Container from 'src/components/BlogContainer';
 import Layout from 'src/components/BlogLayout';
 import MoreStories from 'src/components/MoreStories';
@@ -6,7 +7,6 @@ import PostHeader from 'src/components/PostHeader';
 import PostTitle from 'src/components/PostTitle';
 import SectionSeparator from 'src/components/SectionSeparator';
 import type { Post, Settings } from 'src/lib/sanity.queries';
-import { notFound } from 'next/navigation';
 
 export default function PostPage(props: {
   preview?: boolean;

@@ -1,3 +1,4 @@
+import { previewData } from 'next/headers';
 import PostPage from 'src/components/PostPage';
 import PreviewPostPage from 'src/components/preview/PreviewPostPage';
 import { PreviewSuspense } from 'src/components/preview/PreviewSuspense';
@@ -6,7 +7,6 @@ import {
   getPostAndMoreStories,
   getSettings,
 } from 'src/lib/sanity.client';
-import { previewData } from 'next/headers';
 
 export async function generateStaticParams() {
   return await getAllPostsSlugs();

@@ -1,8 +1,8 @@
 'use client';
 
 import Cal from '@calcom/embed-react';
-import { useVisibility } from 'src/hooks';
 import { Suspense } from 'react';
+import { useVisibility } from 'src/hooks';
 
 const Calendar = () => {
   const { isVisible } = useVisibility();

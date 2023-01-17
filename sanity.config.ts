@@ -16,6 +16,7 @@ import {
 } from 'src/lib/sanity.api';
 import { previewDocumentNode } from 'src/plugins/previewPane';
 import { productionUrl } from 'src/plugins/productionUrl';
+import { settingsPlugin } from 'src/plugins/settings';
 import authorType from 'src/schemas/author';
 import categoryType from 'src/schemas/category';
 import postType from 'src/schemas/post';
@@ -41,7 +42,7 @@ export default defineConfig({
       defaultDocumentNode: previewDocumentNode({ apiVersion, previewSecretId }),
     }),
     // Configures the global "new document" button, and document actions, to suit the Settings document singleton
-    // settingsPlugin({ type: settingsType.name }),
+    settingsPlugin({ type: settingsType.name }),
     // Add the "Open preview" action
     productionUrl({
       apiVersion,

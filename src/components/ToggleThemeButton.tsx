@@ -1,7 +1,7 @@
 'use client';
 
-import { useDarkMode } from 'src/hooks';
 import { Suspense } from 'react';
+import { useDarkMode } from 'src/hooks';
 
 import { MoonIcon, SunIcon } from './svgs';
 
